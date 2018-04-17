@@ -1,0 +1,27 @@
+{
+    "containerDefinitions": [
+        {
+            "essential": true,
+            "image": "amaysim-au/repo-supervisor:${BUILD_VERSION}",
+            "name": "repo-supervisor",
+            "portMappings": [
+                {
+                    "containerPort": 7070
+                }
+            ],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "ecs-${ECS_APP_NAME}-${ENV}",
+                    "awslogs-region": "ap-southeast-2",
+                    "awslogs-stream-prefix": "${BUILD_VERSION}"
+                }
+            }
+        }
+    ],
+    "taskRoleArn": "${ECS_TASK_ROLE_ARN}",
+    "memory": "128",
+    "cpu": "128",
+    "family": "${ECS_APP_NAME}-${ENV}",
+    "volumes": []
+}

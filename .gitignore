@@ -10,3 +10,8 @@ node_modules
 TODO
 .vscode
 .config.json
+
+deployment/ecs-env.json
+deployment/ecs-config-env.yml
+.env*
+!.env.template
