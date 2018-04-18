@@ -2,8 +2,10 @@
     "containerDefinitions": [
         {
             "essential": true,
-            "image": "amaysim-au/repo-supervisor:${BUILD_VERSION}",
-            "name": "repo-supervisor",
+            "image": "amaysim/repo-supervisor:${VERSION}",
+            "command": ["bash", "-c", "source ~/.bashrc && npm start"],
+            "workingDirectory": "/opt/repo-supervisor",
+            "name": "Repo-Supervisor",
             "portMappings": [
                 {
                     "containerPort": 7070

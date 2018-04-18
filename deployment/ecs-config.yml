@@ -1,6 +1,6 @@
 ---
 lb_health_check: /
-lb_health_check_grace_period: 10
+lb_health_check_grace_period: 60
 lb_deregistration_delay: 60
 
 autoscaling: Enable
